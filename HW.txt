@@ -36,9 +36,12 @@ git branch -b featureC
 6.	Create merge request into master. Review the code and merge
         it by resolving and closing the merge request.
 
+выполнено на github 
 
 7.	Make the commit into master and mark it with tag
 
+git commit -am "tag me"
+git tag release1.0
 
 8.	Revert the commit from step 7.
 
