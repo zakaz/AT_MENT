@@ -1,5 +1,9 @@
 1.	Create feature branch A and make some commits 
 
+git checkout -b featureA
+git add -A
+git commit -m "first one"
+git push -u origin featureA
 
 2.	Cherry-pick the commit to master
 
