@@ -24,6 +24,9 @@ git push origin featureB
 
 4.	Rebase B into master
 
+git rebase master
+git checkout master
+git merge featureB
 
 5.	Create feature branch C and make some commit
 
