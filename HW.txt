@@ -18,6 +18,9 @@ git cherry-pick dd6499 //только тот коммит что менял HW.t
 3.	Create feature branch B and make some commits
 
 git checkout -b featureB
+git commit -am "Some changes" //новых файлов не создавалось
+git push origin featureB
+
 
 4.	Rebase B into master
 
