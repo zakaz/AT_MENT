@@ -1,0 +1,24 @@
+1.	Create feature branch A and make some commits 
+
+
+2.	Cherry-pick the commit to master
+
+
+3.	Create feature branch B and make some commits
+
+
+4.	Rebase B into master
+
+
+5.	Create feature branch C and make some commit
+
+
+6.	Create merge request into master. Review the code and merge
+        it by resolving and closing the merge request.
+
+
+7.	Make the commit into master and mark it with tag
+
+
+8.	Revert the commit from step 7.
+
