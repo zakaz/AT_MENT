@@ -45,3 +45,4 @@ git tag release1.0
 
 8.	Revert the commit from step 7.
 
+git reset HEAD^
