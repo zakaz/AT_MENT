@@ -30,6 +30,8 @@ git merge featureB
 
 5.	Create feature branch C and make some commit
 
+git branch -b featureC
+
 
 6.	Create merge request into master. Review the code and merge
         it by resolving and closing the merge request.
