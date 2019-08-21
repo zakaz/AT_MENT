@@ -5,11 +5,19 @@ git add -A
 git commit -m "first one"
 git push -u origin featureA
 
+//это изменение не должно попасть в master
+git add File.txt
+git commit "something went wrong"
+git push
+
 2.	Cherry-pick the commit to master
 
+git checkout master
+git cherry-pick dd6499 //только тот коммит что менял HW.txt
 
 3.	Create feature branch B and make some commits
 
+git checkout -b featureB
 
 4.	Rebase B into master
 
