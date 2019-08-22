@@ -7,7 +7,11 @@ public class TestBench {
 
     public static void main(String[] args) {
 
-        Utils.ArrayTools.printArray(Utils.ArrayTools.intArrayGenerator());
+        int[] array = Utils.ArrayTools.intArrayGenerator();
+        Utils.ArrayTools.printArray(array);
+        array = Utils.ArrayTools.swapArrayElements(array,0,19);
+        System.out.println("\n Абракадабра");
+        Utils.ArrayTools.printArray(array);
 
     }
 
