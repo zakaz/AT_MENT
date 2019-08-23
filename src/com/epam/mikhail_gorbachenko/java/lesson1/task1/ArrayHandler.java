@@ -18,7 +18,7 @@ public class ArrayHandler {
         Utils.ArrayTools.printArray(array);
 
         ArrayHandler arrayHandler = new ArrayHandler();
-        arrayHandler.option2(array); //задать задание тут
+        arrayHandler.option5(array); //задать задание тут
 
 
 
@@ -109,10 +109,28 @@ public class ArrayHandler {
 
     /**
      * Вариант 5
-     * В массиве целых чисел найти разницу между средним арифметическим и значение минимального элемента.
+     * В массиве целых чисел найти разницу между средним арифметическим и значением минимального элемента.
      * @param array
      */
     public void option5(int[] array){
+        int min = 11; //минимальное число
+        int average = 0; //среднее арефметическое // сначала используется как сумма, а после цикала делится на количесво элементов. Лучше использовать разнве переменный для этого?
+        int result = 0; //результируящая переменная.
+
+        for(int i =0; i<(array.length-1); i++){
+            average = average + array[i];
+            if(array[i]< min){
+                min = array[i];
+            }
+        }
+
+        average = average/(array.length); //можно было би и просто на 20, но так универсальнее
+
+        result = Math.abs(average-min); //но это будет не совсем правильно...
+
+        System.out.println("\nAverage is: "+ average +
+                           "\nMin is: " + min +
+                           "\nDifference is: " + result);
 
     }
 

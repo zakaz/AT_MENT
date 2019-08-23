@@ -16,8 +16,10 @@ public class TestBench {
         if(Utils.ArrayTools.digitIsEven(3)){
             System.out.println("\nyeah");
         } else {
-            System.out.println("nope");
+            System.out.println("\nnope");
         }
+
+
 
     }
 
