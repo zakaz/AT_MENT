@@ -1,7 +1,5 @@
 package com.epam.mikhail_gorbachenko.java.utils;
 
-import com.sun.prism.shader.Texture_ImagePattern_AlphaTest_Loader;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
