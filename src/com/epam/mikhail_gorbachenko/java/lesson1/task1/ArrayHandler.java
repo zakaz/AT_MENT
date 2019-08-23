@@ -18,7 +18,7 @@ public class ArrayHandler {
         Utils.ArrayTools.printArray(array);
 
         ArrayHandler arrayHandler = new ArrayHandler();
-        arrayHandler.option3(array); //задать задание тут
+        arrayHandler.option2(array); //задать задание тут
 
 
 
@@ -30,11 +30,11 @@ public class ArrayHandler {
      * В массиве целых чисел поменять местами максимальный отрицательный элемент  и минимальный положительный.
      * (ВОПРОС: их же может быть несколько?) Заменить надо первый из встретившихся элементов.
      */
-    public void option1(int[] array){ //TODO: айяяй забыл что их надо менть местами.
-        int maxNegotive = -11;
-        int indexMaxNeg = 0;
-        int minPozitive = 11;
-        int indexMinPos = 0;
+    public void option1(int[] array){
+        int maxNegotive = -11; //максимальное негативное число
+        int indexMaxNeg = 0; //позиция максимального негативного числа
+        int minPozitive = 11; //минимальное позитивное число
+        int indexMinPos = 0; //позиция минимального позитвного числа
 
         for (int i = 0; i<(array.length-1); i++) { //похоже из foeach не удастся забрать номер, надо делать через for.
             if (array[i] < 0) { //если отрицательное
@@ -62,6 +62,21 @@ public class ArrayHandler {
      * @param array
      */
     public void option2(int[] array){
+        int summIndex = 0; //сумма по индексам (от нуля)
+        int summPos = 0; //сумма по позициям (от единицы)
+
+        for(int i=0; i<(array.length-1); i++){
+            if(Utils.ArrayTools.digitIsEven(i)){
+                summIndex = summIndex + array[i];
+            }
+
+            if(Utils.ArrayTools.digitIsEven(i+1)){
+                summPos = summPos + array[i];
+            }
+        }
+
+        System.out.println("\n Summ of numbers on even indexes is: " + summIndex +
+                            "\n Summ of numbers on even position is: " + summPos);
 
     }
 
@@ -81,5 +96,34 @@ public class ArrayHandler {
         Utils.ArrayTools.printArray(array);
 
     }
+
+
+    /**
+     * Вариант 4
+     * В массиве целых чисел утроить каждый положительный элемент, который стоит перед отрицательным.
+     * @param array
+     */
+    public void option4(int[] array){
+
+    }
+
+    /**
+     * Вариант 5
+     * В массиве целых чисел найти разницу между средним арифметическим и значение минимального элемента.
+     * @param array
+     */
+    public void option5(int[] array){
+
+    }
+
+    /**
+     * Вариант 6
+     * В массиве целых чисел вывести все элементы, которые встречаются больше одного раза и индексы которых нечётные.
+     * @param array
+     */
+    public void option6(int[] array){
+
+    }
+
 
 }

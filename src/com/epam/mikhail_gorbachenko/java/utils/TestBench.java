@@ -13,6 +13,12 @@ public class TestBench {
         System.out.println("\n Абракадабра");
         Utils.ArrayTools.printArray(array);
 
+        if(Utils.ArrayTools.digitIsEven(3)){
+            System.out.println("\nyeah");
+        } else {
+            System.out.println("nope");
+        }
+
     }
 
 }

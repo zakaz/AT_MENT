@@ -21,7 +21,7 @@ public class Utils {
           int min = -11; // так стремно задается диапазон
           int max = 10;
             for (int i = 0; i < 19; i++) {
-                array[i] = (int) (Math.random()*(max - min) +1) + min; //TODO: что-то с этим сделать
+                array[i] = (int) (Math.random()*(max - min) +1) + min; //не очень красиво
             }
             return array;
         }
@@ -38,6 +38,7 @@ public class Utils {
 
         /**
          * Меняет местами два элемента массива. По условию задачи массив всегда int[20].
+         * Принимает исходный массив, а возвращает измененный.
          * @param array - массив int[20] в котором надо поменять местами элементы
          * @param index_a - индекс первого элемента
          * @param index_b - индекс второго элемента
@@ -63,6 +64,20 @@ public class Utils {
         private static void indexCheker(int index, int arrayLength){
             if ((index<0) || (index > arrayLength-1)){
                 throw new AT_MENT_Exception("Элемента с индексом " + index + " не может быть в массиве на 20 элементов!");
+            }
+        }
+
+        /**
+         * Проверяет четное число или нет.
+         * Используется для определения четных индексов, т.к. в задании встречается больее одного раза.
+         * @param digit
+         * @return
+         */
+        public static boolean digitIsEven (int digit) { //TODO: перенести из аррей тулс
+            if (digit % 2 == 0) {
+                return true; //четное
+            } else {
+                return false; //не четное
             }
         }
     }
