@@ -2,6 +2,9 @@ package com.epam.mikhail_gorbachenko.java.lesson1.task1;
 
 import com.epam.mikhail_gorbachenko.java.utils.Utils;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Написать программу, осуществляющую обработку массива.
  * Исходные условия: массив содержит только целые числа от -10 до 10,
@@ -18,7 +21,7 @@ public class ArrayHandler {
         Utils.ArrayTools.printArray(array);
 
         ArrayHandler arrayHandler = new ArrayHandler();
-        arrayHandler.option5(array); //задать задание тут
+        arrayHandler.option6(array); //задать задание тут
 
 
 
@@ -51,7 +54,7 @@ public class ArrayHandler {
         }
             array = Utils.ArrayTools.swapArrayElements(array, indexMaxNeg, indexMinPos);
 
-            System.out.println("\nМаксимальное отрицательное: " + maxNegotive + "\n" + "Минимальное положительное: " + minPozitive + "\n");
+            System.out.println("\nMax negotive: " + maxNegotive + "\n" + "Min positive: " + minPozitive + "\n");
             Utils.ArrayTools.printArray(array);
         }
 
@@ -126,7 +129,7 @@ public class ArrayHandler {
 
         average = average/(array.length); //можно было би и просто на 20, но так универсальнее
 
-        result = Math.abs(average-min); //но это будет не совсем правильно...
+        result = Math.abs(average-min);
 
         System.out.println("\nAverage is: "+ average +
                            "\nMin is: " + min +
@@ -140,6 +143,26 @@ public class ArrayHandler {
      * @param array
      */
     public void option6(int[] array){
+        //В карте хранится (число: количество вхождений)
+        Map<Integer,Integer> encounteredDigits = new HashMap<Integer,Integer>(); //порядок неважен поэому просто HashMap
+
+        for(int i=0; i<(array.length-1); i++){
+            //TODO: Стоит ли продолжать использовать array[i] или лучше завести переменную с простым именем?
+            //сказано про нечетные *индексы*
+            if(!Utils.ArrayTools.digitIsEven(i)){ //нас интересуют только нечетные индексы
+                if (encounteredDigits.containsKey(array[i])){ //если тако элемент есть в мапе
+                    encounteredDigits.put(array[i], (encounteredDigits.get(array[i]) + 1) ); //прибавляем к значению еденичку
+                } else {
+                    encounteredDigits.put(array[i], 1); //если нет кладем число и ставим количество вхождений
+                }
+            }
+        }
+
+        for (Map.Entry<Integer,Integer> item: encounteredDigits.entrySet()) {
+            if(item.getValue()>1){
+                System.out.print("\nDigit " + item.getKey() + " was encountered " + item.getValue() +" times");
+            }
+        }
 
     }
 
