@@ -100,11 +100,16 @@ public class Utils {
      */
     public static class StringTools {
 
+        /**
+         * Консольный ввод строк. (Для слов будет обработка с удалением пробелов и всем что следует за ними)
+         * @return возврашает Map<String, Integer> (строка, длинна строки) - но похоже скоро перестанет.
+         * @throws IOException
+         */
         public static Map<String, Integer> consoleInput() throws IOException { //TODO: кривовато, но похже придумаю что с этим сделать
 
             //сначала хотел использовать List, но потом заметил что во всех заданиях требуется длинна и решил высчитывать ее сразу.
             Map<String,Integer> strings= new LinkedHashMap<String,Integer>(); //Вообще в задаче не важно, но, наверное, при вводе порядок важен, поэтому тспользую LinkedHashMap
-            //TODO: ай-ай-ай забыл что ключи переписаться могут если они одинаковы!!! Лучше использовать другую структуру!!!
+            //TODO: ай-ай-ай забыл что ключи переписаться могут если они одинаковы!!! Лучше использовать другую структуру!!! (Буду использовать List)
 
             System.out.print("Follow the command, please. \nEnter string: ");
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -132,6 +137,10 @@ public class Utils {
             return strings;
         }
 
+        /**
+         * Печатет Map<String, Integer>
+         * @param strings
+         */
         public static void printMapContent(Map<String,Integer> strings){
             for (Map.Entry<String,Integer> string : strings.entrySet()) {
                 System.out.println(string.getKey() + "|" +string.getValue());
