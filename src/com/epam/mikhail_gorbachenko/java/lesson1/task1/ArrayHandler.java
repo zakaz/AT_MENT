@@ -21,7 +21,7 @@ public class ArrayHandler {
         Utils.ArrayTools.printArray(array);
 
         ArrayHandler arrayHandler = new ArrayHandler();
-        arrayHandler.option6(array); //задать задание тут
+        arrayHandler.option4(array); //задать задание тут
 
 
 
@@ -108,6 +108,14 @@ public class ArrayHandler {
      */
     public void option4(int[] array){
 
+        for (int i = 0; i < (array.length-2); i++){ //array.length-2 Потому что последнее число нас не интересует и делать лишнюю проверку(чтобы не выскочить за пределы) в цикле не имеет смысла, думаю
+            if(array[i+1]<0){
+                array[i]=(array[i]*3);
+            }
+        }
+        System.out.println("\n new array is");
+        Utils.ArrayTools.printArray(array);
+
     }
 
     /**
@@ -117,7 +125,7 @@ public class ArrayHandler {
      */
     public void option5(int[] array){
         int min = 11; //минимальное число
-        int average = 0; //среднее арефметическое // сначала используется как сумма, а после цикала делится на количесво элементов. Лучше использовать разнве переменный для этого?
+        int average = 0; //среднее арефметическое // сначала используется как сумма, а после цикала делится на количесво элементов. Лучше использовать разные переменный для этого?
         int result = 0; //результируящая переменная.
 
         for(int i =0; i<(array.length-1); i++){
@@ -127,7 +135,7 @@ public class ArrayHandler {
             }
         }
 
-        average = average/(array.length); //можно было би и просто на 20, но так универсальнее
+        average = average/(array.length); //можно было бы и просто на 20, но так универсальнее
 
         result = Math.abs(average-min);
 
