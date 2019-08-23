@@ -21,10 +21,7 @@ public class ArrayHandler {
         Utils.ArrayTools.printArray(array);
 
         ArrayHandler arrayHandler = new ArrayHandler();
-        arrayHandler.option4(array); //задать задание тут
-
-
-
+        arrayHandler.option6(array); //задать задание тут
 
     }
 
