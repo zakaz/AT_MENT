@@ -18,7 +18,7 @@ public class ArrayHandler {
         Utils.ArrayTools.printArray(array);
 
         ArrayHandler arrayHandler = new ArrayHandler();
-        arrayHandler.option1(array);
+        arrayHandler.option3(array); //задать задание тут
 
 
 
@@ -66,10 +66,19 @@ public class ArrayHandler {
     }
 
     /**
-     *
+     * В массиве целых чисел заменить нулями отрицательные элементы.
      * @param array
      */
     public void option3(int[] array){
+
+        for(int i = 0; i<(array.length-1); i++){
+            if (array[i] < 0){
+                array[i] = 0;
+            }
+        }
+
+        System.out.println("\n Convert negative to zero...");
+        Utils.ArrayTools.printArray(array);
 
     }
 
