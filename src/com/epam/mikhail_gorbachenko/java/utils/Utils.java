@@ -24,10 +24,12 @@ public class Utils {
          */
         public static int[] intArrayGenerator() {
             int[] array = new int[20];
-            int min = -11; // так стремно задается диапазон
+            int min = -10; // так стремно задается диапазон
             int max = 10;
-            for (int i = 0; i < 19; i++) {
-                array[i] = (int) (Math.random() * (max - min) + 1) + min; //не очень красиво
+            int range = (max - min) + 1;
+            for (int i = 0; i < 20; i++) {
+//                array[i] = (int) (Math.random() * (max - min) + 1) + min; //не очень красиво
+                array[i] = (int) (Math.random() * range) + min;
             }
             return array;
         }
@@ -41,6 +43,7 @@ public class Utils {
             for (int i : array) {
                 System.out.print(i + " ");
             }
+            System.out.println("-----");
         }
 
         /**
