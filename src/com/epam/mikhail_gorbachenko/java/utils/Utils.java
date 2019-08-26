@@ -128,8 +128,13 @@ public class Utils {
                 //убираем символы после пробела
                 if(words){
                     if (text.contains(" ")){
-                        text = text.substring(0, text.indexOf(" ")); //TODO:
+                        text = text.substring(0, text.indexOf(" "));
                     }
+                }
+
+                if(text.equals("")){
+                    System.out.println("\"\" not even word. Please, try again:");
+                    continue;
                 }
 
                 strings.add(text); //добавляем строку в список
@@ -183,6 +188,20 @@ public class Utils {
             charsOfTheWord.clear(); //по идее очистка не нужна
 
             return  uniqueCharsCount;
+        }
+
+        /**
+         * Определяет состоит ли слово из одних цифр
+         * @param word
+         * @return true - если состоит; false - если хоть одна буква не цифра
+         */
+        public static boolean isDigitWord(String word){
+            for(int i=0; i<word.length(); i++){
+                if(!Character.isDigit(word.charAt(i))){
+                    return false;
+                }
+            }
+            return true;
         }
 
 
