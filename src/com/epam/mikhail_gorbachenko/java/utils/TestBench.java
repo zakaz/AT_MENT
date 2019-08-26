@@ -1,10 +1,7 @@
 package com.epam.mikhail_gorbachenko.java.utils;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.ArrayList;
 
 /**
  * Класс для проверки кусочков
@@ -29,8 +26,8 @@ public class TestBench {
         String text = in.nextLine();
         System.out.println(text); */
 
-        Map<String, Integer> test = Utils.StringTools.consoleInput();
-        Utils.StringTools.printMapContent(test);
+        ArrayList<String> test = Utils.StringTools.consoleInput();
+        Utils.StringTools.printListContent(test);
 
 
     }

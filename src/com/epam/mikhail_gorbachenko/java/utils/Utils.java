@@ -1,14 +1,14 @@
 package com.epam.mikhail_gorbachenko.java.utils;
 
 import com.epam.mikhail_gorbachenko.java.exceptions.AT_MENT_Exception;
+import sun.security.util.ArrayUtil;
 
 import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.List;
 
 /**
  * Утилиты типа генерации массива и строк и т.д.
@@ -102,28 +102,27 @@ public class Utils {
 
         /**
          * Консольный ввод строк. (Для слов будет обработка с удалением пробелов и всем что следует за ними)
-         * @return возврашает Map<String, Integer> (строка, длинна строки) - но похоже скоро перестанет.
+         * @return возврашает List<String> (строка) - но похоже скоро перестанет.
          * @throws IOException
          */
-        public static Map<String, Integer> consoleInput() throws IOException { //TODO: кривовато, но похже придумаю что с этим сделать
+        public static ArrayList<String> consoleInput() throws IOException {
 
-            //сначала хотел использовать List, но потом заметил что во всех заданиях требуется длинна и решил высчитывать ее сразу.
-            Map<String,Integer> strings= new LinkedHashMap<String,Integer>(); //Вообще в задаче не важно, но, наверное, при вводе порядок важен, поэтому тспользую LinkedHashMap
-            //TODO: ай-ай-ай забыл что ключи переписаться могут если они одинаковы!!! Лучше использовать другую структуру!!! (Буду использовать List)
+            ArrayList<String> strings= new ArrayList<String>();
 
-            System.out.print("Follow the command, please. \nEnter string: ");
+
+            System.out.print("Follow the instructions, please. \nEnter string: ");
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
             boolean exit = false; //флаг выхода из цикла по команле "no"
             while (!exit) {
                 String text = reader.readLine();
 
-                strings.put(text, text.length()); //кладем в мап сразу и строку и ее длинну.
+                strings.add(text); //добавляем строку в список
 
                 for (; ; ) {
                     System.out.print("Do you wish enter another string? [y/n]");
                     String cmd = reader.readLine();
-                    if (cmd.equalsIgnoreCase("no") || cmd.equalsIgnoreCase("n")) {
+                    if (cmd.equalsIgnoreCase("no") || cmd.equalsIgnoreCase("n")) { //TODO:можно же довавить set или enum комманд!
                         exit = true;
                         break;
                     } else if (cmd.equalsIgnoreCase("yes") || cmd.equalsIgnoreCase("y")) {
@@ -137,13 +136,26 @@ public class Utils {
             return strings;
         }
 
+
+        //По условию везде строки, а по идее, наверное, надо делать универсальными
+
         /**
-         * Печатет Map<String, Integer>
+         * Печатет List<String>
          * @param strings
          */
-        public static void printMapContent(Map<String,Integer> strings){
-            for (Map.Entry<String,Integer> string : strings.entrySet()) {
-                System.out.println(string.getKey() + "|" +string.getValue());
+        public static void printListContent(ArrayList<String> strings){
+            for (String line : strings) {
+                System.out.println(line);
+            }
+        }
+
+        /**
+         * Печатет содержимое Set<String>
+         * @param set
+         */
+        public static void printSetContent(HashSet<String> set){
+            for (String item: set) {
+                System.out.println(item);
             }
         }
 
