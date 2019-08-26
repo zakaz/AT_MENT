@@ -98,21 +98,39 @@ public class Utils {
     public static class StringTools {
 
         /**
-         * Консольный ввод строк. (Для слов будет обработка с удалением пробелов и всем что следует за ними)
-         * @return возврашает List<String> (строка) - но похоже скоро перестанет.
+         * Консольный ввод строк для строк.
          * @throws IOException
          */
         public static ArrayList<String> consoleInput() throws IOException {
+           return consoleInput(false);
+        }
+
+        /**
+         * Консольный ввод строк. (Для слов будет обработка с удалением пробелов и всем что следует за ними)
+         * @param words (boolean) - идет ли работа со словами или нет. Если идет работа со словами, строка обрезается после первого пробела.
+         * @return возврашает List<String> (строка) - но похоже скоро перестанет.
+         * @throws IOException
+         */
+        public static ArrayList<String> consoleInput(boolean words) throws IOException {
 
             ArrayList<String> strings= new ArrayList<String>();
-
-
-            System.out.print("Follow the instructions, please. \nEnter string: ");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
             boolean exit = false; //флаг выхода из цикла по команле "no"
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            if(words){
+                System.out.print("Follow the instructions, please. \nEnter a single word (chars after first space will be cropped!): ");
+            } else {
+                System.out.print("Follow the instructions, please. \nEnter string: ");
+            }
             while (!exit) {
                 String text = reader.readLine();
+
+                //убираем символы после пробела
+                if(words){
+                    if (text.contains(" ")){
+                        text = text.substring(0, text.indexOf(" ")); //TODO:
+                    }
+                }
 
                 strings.add(text); //добавляем строку в список
 
@@ -148,6 +166,23 @@ public class Utils {
             average = average / list.size();
 
             return average;
+        }
+
+        /**
+         * Подсчет уникальных символов в слове
+         * @param word
+         * @return int - количество уникальных символов в слове
+         */
+        public static int uniqueCharsInWord(String word){
+            HashSet<Character> charsOfTheWord = new HashSet<Character>(); //по его размеру я буду определять количество разных символов
+            int uniqueCharsCount = 0;
+            for(int i = 0; i<word.length(); i++){
+                charsOfTheWord.add(word.charAt(i));
+            }
+            uniqueCharsCount = charsOfTheWord.size();
+            charsOfTheWord.clear(); //по идее очистка не нужна
+
+            return  uniqueCharsCount;
         }
 
 
