@@ -1,14 +1,11 @@
 package com.epam.mikhail_gorbachenko.java.utils;
 
 import com.epam.mikhail_gorbachenko.java.exceptions.AT_MENT_Exception;
-import sun.security.util.ArrayUtil;
 
-import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
-import java.util.List;
 
 /**
  * Утилиты типа генерации массива и строк и т.д.
@@ -134,6 +131,23 @@ public class Utils {
                 }
             }
             return strings;
+        }
+
+        /**
+         * Расчет средней длинны строки в списке
+         * @param list (String)
+         * @return int
+         */
+        public static int averageLengthOfStringsInList(ArrayList<String> list){
+            int average = 0; //пусть будет с округлением
+
+            for (String item: list) {
+                average = average+item.length();
+            }
+
+            average = average / list.size();
+
+            return average;
         }
 
 
