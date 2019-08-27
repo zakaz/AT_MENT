@@ -111,7 +111,7 @@ public class Utils {
         /**
          * Консольный ввод строк. (Для слов будет обработка с удалением пробелов и всем что следует за ними)
          * @param words (boolean) - идет ли работа со словами или нет. Если идет работа со словами, строка обрезается после первого пробела.
-         * @return возврашает List<String> (строка) - но похоже скоро перестанет.
+         * @return возврашает List<String> (строка)
          * @throws IOException
          */
         public static ArrayList<String> consoleInput(boolean words) throws IOException {
