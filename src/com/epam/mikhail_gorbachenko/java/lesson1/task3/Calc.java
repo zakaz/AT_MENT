@@ -1,8 +1,5 @@
 package com.epam.mikhail_gorbachenko.java.lesson1.task3;
 
-import com.epam.mikhail_gorbachenko.java.exceptions.AT_MENT_Exception;
-import com.sun.java.swing.plaf.windows.WindowsToggleButtonUI;
-
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -22,8 +19,6 @@ public class Calc {
         app.calculate(app.readLine());
 
     }
-
-    //private final Character[] cmds = {'+', '-', '/', '*'};
 
     private String readLine(){
         System.out.println("Please enter command in format a [+,-,*,/] b:");
