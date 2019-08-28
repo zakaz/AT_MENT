@@ -26,8 +26,9 @@ public class TestBench {
         String text = in.nextLine();
         System.out.println(text); */
 
-        ArrayList<String> test = Utils.StringTools.consoleInput(true);
+      /*  ArrayList<String> test = Utils.StringTools.consoleInput(true);
         Utils.StringTools.printListContent(test);
+        */
 
     }
 
