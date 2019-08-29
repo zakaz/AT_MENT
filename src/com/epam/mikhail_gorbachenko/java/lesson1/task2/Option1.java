@@ -23,6 +23,7 @@ public class Option1 {
 
     }
 
+    //лучше попробовать без minLength и maxLength, потому как строка может попасться длинной. не нужно ограничивать себя integer'ами.
     void maxAndMinStringWithLength(ArrayList<String> list){
         int minLength = Integer.MAX_VALUE; //TODO: завести константы?
         int maxLength = -1;
