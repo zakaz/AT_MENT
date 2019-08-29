@@ -24,7 +24,7 @@ public class Option4 {
     }
 
     void findWordWithMinimalDiversity(ArrayList<String> list){
-        int minDiversity = Integer.MAX_VALUE;
+        int minDiversity = Integer.MAX_VALUE;//лучше без этого
         String wordWithMinimalDiversity = "";
         HashSet<Character> setOfChars = new HashSet<Character>(); //по его размеру я буду определять количество разных символов
 
