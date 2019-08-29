@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public abstract class Velichle {
-    enum status{
+    enum Status{
         IN_SERVICE, //на службе
         NOT_AVAILABLE, //не доступен по каким-то причинам
         ON_REPAIR, //на ремонте
@@ -27,5 +27,21 @@ public abstract class Velichle {
     ArrayList<Date> datesOfMaintenance = new ArrayList<>(); //список дат техобслуживание
     double initialPrice; //цена покупки
     double actualPrice; //текущая цена
+
+    /**
+     * заправить
+     */
+    public abstract void fillTheTank();
+
+    /**
+     * изменить статус
+     */
+    public abstract void changeStatus(Status state);
+
+    /**
+     * Проверить статус
+     * @return
+     */
+    public abstract Status checkStatus();
 
 }

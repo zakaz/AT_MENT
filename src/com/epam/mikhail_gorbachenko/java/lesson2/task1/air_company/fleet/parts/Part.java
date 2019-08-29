@@ -5,7 +5,7 @@ import java.util.Date;
 
 public abstract class Part {
 
-    enum status{
+    enum Status{
         ON_BOARD, //Установленна
         AVAILABLE, //Доступна
         NOT_AVAILABLE, //Не доступна
@@ -21,5 +21,6 @@ public abstract class Part {
     ArrayList<Date> datesOfRepair = new ArrayList<>(); //список дат ремонта
     double initialPrice; //цена покупки
     double actualPrice; //текущая цена
+    boolean isOK; //Статус исправна/не исправна
 
 }
