@@ -48,7 +48,7 @@ public class CalcReNewed {
                         case FIRST_DIGIT://TODO: нененене остановись и вернись как настроени думать будет, балда!
                             if (Character.isDigit(input.charAt(i))){
                                 element.append(input.charAt(i));
-                            } if() //если входит в команды
+                            } //if() //если входит в команды
                     }
 
                 }
