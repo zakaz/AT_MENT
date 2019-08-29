@@ -43,6 +43,8 @@ public class DynamicArray<T>{
     }
 
 
+
+
     public int size(){
         return size;
     }
